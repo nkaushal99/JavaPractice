@@ -3,6 +3,7 @@ package com.practice;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,9 +34,19 @@ public class RegisterServlet extends HttpServlet{
 				out.println("<h2>Email: "+ email +"</h2>");
 				out.println("<h2>Gender: "+ gender +"</h2>");
 				out.println("<h2>Course: "+ course +"</h2>");
+				
+				////////////////////////////
+				//Assume Saved to Database//
+				////////////////////////////
+				
+				RequestDispatcher rd = request.getRequestDispatcher("/success");
+				rd.forward(request, response);
 			}
 			else {
 				out.println("<h2>You have not accepted terms and conditions.");
+				
+				RequestDispatcher rd = request.getRequestDispatcher("index.html");
+				rd.include(request, response);
 			}
 		}
 		catch(IOException ioex) {
