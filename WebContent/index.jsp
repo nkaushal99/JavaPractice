@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>Form Page</title>
-	</head>
-	<body>
+<%@ include file="header.html" %>
 		<h1>My Form</h1>
 		
 		<form action="RegisterServlet" method="post">
@@ -56,5 +50,4 @@
 				</tr>
 			</table>
 		</form>
-	</body>
-</html>
+<%@ include file="footer.jsp" %>
